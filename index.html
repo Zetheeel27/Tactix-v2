@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TACTIX — Outils tactiques</title>
+  <meta name="description" content="Dashboard tactique moderne avec 3D et outils utiles." />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Three.js depuis CDN (nécessite Internet) -->
+  <script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
+</head>
+<body>
+  <canvas id="bg3d" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-dot"></span>
+      <span class="brand-text">TACTIX</span>
+    </div>
+    <nav class="nav">
+      <button id="toggle3d" class="chip">3D: <span id="threeState">ON</span></button>
+      <button id="themeSwitch" class="chip">Thème</button>
+      <a class="chip" href="#outils">Outils</a>
+      <a class="chip" href="#apropos">À propos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Dashboard Tactique <span class="accent">3D</span></h1>
+      <p class="subtitle">Style “How to Sell Drugs Online (Fast)” — sombre, néon, verre dépoli. Contenu 100% légal et orienté productivité.</p>
+      <div class="cta">
+        <a href="#outils" class="btn primary">Ouvrir les outils</a>
+        <button id="pulseRadar" class="btn">Effet radar</button>
+      </div>
+    </section>
+
+    <section id="outils" class="grid">
+      <!-- Carte rapide (ouvre Maps avec votre position) -->
+      <article class="card">
+        <h3>Carte rapide</h3>
+        <p>Ouvre votre position dans Maps (Google/Apple) pour un guidage immédiat.</p>
+        <button id="btnMap" class="btn">Localiser & Ouvrir</button>
+        <small class="hint">Utilise la géolocalisation de l'appareil.</small>
+      </article>
+
+      <!-- Chronomètre -->
+      <article class="card">
+        <h3>Chronomètre</h3>
+        <div class="chrono-display"><span id="chrono">00:00.0</span></div>
+        <div class="row">
+          <button id="chronoStart" class="btn">Start</button>
+          <button id="chronoStop" class="btn">Stop</button>
+          <button id="chronoReset" class="btn">Reset</button>
+        </div>
+        <ol id="laps" class="laps"></ol>
+      </article>
+
+      <!-- Convertisseur unités (km ↔ nm, m ↔ ft) -->
+      <article class="card">
+        <h3>Convertisseur</h3>
+        <div class="row">
+          <label>Valeur
+            <input id="convVal" type="number" inputmode="decimal" placeholder="0">
+          </label>
+          <label>Type
+            <select id="convType">
+              <option value="km-nm">Kilomètres → Milles marins</option>
+              <option value="nm-km">Milles marins → Kilomètres</option>
+              <option value="m-ft">Mètres → Pieds</option>
+              <option value="ft-m">Pieds → Mètres</option>
+            </select>
+          </label>
+        </div>
+        <button id="convert" class="btn">Convertir</button>
+        <div class="result" id="convResult">—</div>
+      </article>
+
+      <!-- Alphabet OTAN -->
+      <article class="card">
+        <h3>Alphabet OTAN</h3>
+        <label>Entrée
+          <input id="natoIn" type="text" placeholder="Ex: TACTIX-01">
+        </label>
+        <button id="natoBtn" class="btn">Transcrire</button>
+        <div class="result" id="natoOut">—</div>
+      </article>
+
+      <!-- Encodeur Morse -->
+      <article class="card">
+        <h3>Encodeur Morse</h3>
+        <label>Message
+          <input id="morseIn" type="text" placeholder="Ex: SOS">
+        </label>
+        <button id="morseBtn" class="btn">Encoder</button>
+        <div class="result" id="morseOut">—</div>
+      </article>
+
+      <!-- Checklist mission (générique et non sensible) -->
+      <article class="card">
+        <h3>Checklist</h3>
+        <div class="checklist" id="checklist">
+          <label><input type="checkbox"> Batterie téléphone/Radio chargée</label>
+          <label><input type="checkbox"> Téléchargement cartes offline</label>
+          <label><input type="checkbox"> Trousse 1er secours</label>
+          <label><input type="checkbox"> Eau + ration</label>
+          <label><input type="checkbox"> Tenue adaptée météo</label>
+        </div>
+        <button id="saveList" class="btn">Sauvegarder</button>
+        <small class="hint">Stocké localement (localStorage).</small>
+      </article>
+    </section>
+
+    <section id="apropos" class="about">
+      <h2>À propos</h2>
+      <p>Modèle visuel néon/verre, interface réactive mobile, fond 3D (Three.js). Les “outils militaires” ici sont des utilitaires génériques (carto, chrono, conversions, phonétique OTAN, Morse) — pas d’armement ni d’illégal.</p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2025 TACTIX — prototype</span>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
