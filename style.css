@@ -1,7 +1,0 @@
-body { margin:0; background:#0a0a0a; color:cyan; font-family:Arial, sans-serif;}
-#login-screen { display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh;}
-#login-screen input, #login-screen button { padding:10px; margin:10px; border-radius:10px; border:none;}
-#dashboard canvas { position:absolute; top:0; left:0; width:100%; height:50%;}
-#controls { position:absolute; top:55%; width:100%; text-align:center;}
-#controls button { margin:5px; padding:10px 20px; border-radius:10px; border:none; background:cyan; color:#000;}
-#map { position:absolute; bottom:0; width:100%; height:40%;}
