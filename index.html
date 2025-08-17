@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>TACTIX Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="three.min.js"></script>
+<script src="leaflet.js"></script>
+<link rel="stylesheet" href="leaflet.css">
+</head>
+<body>
+<div id="login-screen">
+  <canvas id="globe"></canvas>
+  <div class="login-box">
+    <h1 id="login-title"></h1>
+    <input type="password" id="password" placeholder="Mot de passe">
+    <button onclick="checkPassword()">Accéder</button>
+  </div>
+</div>
+<div id="dashboard" style="display:none;">
+  <nav>
+    <button class="btn">Outils</button>
+    <button class="btn">À propos</button>
+  </nav>
+  <div class="card convert">
+    <input type="number" placeholder="Valeur">
+    <select>
+      <option>km → m</option>
+      <option>m → km</option>
+    </select>
+    <button>Convertir</button>
+    <div class="result"></div>
+  </div>
+  <div id="map" style="height:200px;"></div>
+  <button onclick="disablePassword()">Désactiver le mot de passe</button>
+  <button onclick="enablePassword()">Réactiver le mot de passe</button>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
