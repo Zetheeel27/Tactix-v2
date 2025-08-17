@@ -1,6 +1,0 @@
-
-body { margin:0; font-family:sans-serif; background:#050505; color:#0ff; }
-.btn { display:inline-flex; align-items:center; justify-content:center; text-align:center; background:#0ff; color:#050505; border:none; padding:10px 20px; border-radius:30px; cursor:pointer; margin:5px;}
-.login-box { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;}
-.card.convert { display:flex; flex-direction:column; align-items:center; margin:20px; }
-.card.convert input, .card.convert select, .card.convert button { margin:5px; padding:5px; text-align:center;}
